@@ -1,0 +1,15 @@
+mat-sidenav-container, mat-sidenav-content {
+  min-height: 100%
+}
+mat-sidenav {
+  width: 200px;
+}
+
+
+a {
+  text-decoration: none;
+  color: white;
+  &:hover,:focus {
+    color: grey;
+  }
+}

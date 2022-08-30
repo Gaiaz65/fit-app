@@ -27,6 +27,7 @@ import { FormsModule } from '@angular/forms';
     NewTrainingComponent,
     PastTrainingComponent,
     StartPageComponent,
+
   ],
   imports: [
     BrowserModule,
