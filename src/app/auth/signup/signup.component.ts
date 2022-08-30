@@ -13,12 +13,16 @@ export class SignupComponent implements OnInit {
   constructor(
     private authServise: AuthService
   ) {}
+
   ngOnInit(): void {
       this.maxDate = new Date();
       this.maxDate.setFullYear(this.maxDate.getFullYear() - 18);
   }
 
   onSubmit(form:NgForm){
-   console.log (form)
+    this.authServise.registerUser({
+      email: form.value.email,
+      password: form.value.password,
+    })
   }
 }
