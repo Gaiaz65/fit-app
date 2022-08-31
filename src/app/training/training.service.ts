@@ -1,5 +1,8 @@
+import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Exercise } from './exercise.model';
+
+@Injectable()
 export class TrainingService {
   exerciseChanged = new Subject<Exercise | null>();
   availableExercises: Exercise[] = [
