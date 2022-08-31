@@ -1,0 +1,19 @@
+a {
+  text-decoration: none;
+  color: white;
+
+  &:hover,
+  :focus {
+    color: grey;
+  }
+}
+
+span {
+  margin-left: 5px;
+}
+
+
+ul {
+  list-style: none;
+
+}

@@ -1,0 +1,19 @@
+<mat-list>
+  <a mat-list-item routerLink="/signup" (click)="onClose()" *ngIf="!isAuth">
+    <mat-icon>key</mat-icon><span>Signup</span>
+  </a>
+  <a mat-list-item routerLink="/login" (click)="onClose()" *ngIf="!isAuth">
+    <mat-icon>input</mat-icon> <span>Login</span>
+  </a>
+  <a mat-list-item routerLink="/training" (click)="onClose()" *ngIf="isAuth">
+    <mat-icon>sports_gymnastics</mat-icon><span>Training</span>
+  </a>
+  <mat-list-item (click)="onClose()">
+    <button mat-icon-button>
+      <mat-icon>
+        tungsten
+      </mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-list-item>
+</mat-list>
