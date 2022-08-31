@@ -16,7 +16,7 @@ import { Subscription } from 'rxjs';
 export class HeaderComponent implements OnInit, OnDestroy {
   @Output() sidenavEvent = new EventEmitter<void>();
   authStatusChanged!: Subscription;
-  isAuth: boolean;
+  @Output() isAuth: boolean;
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {

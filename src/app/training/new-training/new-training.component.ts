@@ -9,17 +9,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new-training.component.scss'],
 })
 export class NewTrainingComponent implements OnInit {
-
   exercises:Exercise[] = [];
-  constructor(
-    private trService:TrainingService
-  ) {}
 
-  ngOnInit(): void {
+  constructor(private trService:TrainingService) {}
+
+  ngOnInit() {
     this.exercises = this.trService.getAvailableExercises();
   }
 
   onStartTraining(form: NgForm) {
-    this.trService.startExercise(form.value.exercise)
+    this.trService.startExercise(form.value.exercise);
   }
 }

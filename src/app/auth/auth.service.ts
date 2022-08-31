@@ -38,13 +38,12 @@ export class AuthService {
   }
 
   isAuth() {
-    console.log (this.user)
     return this.user ;
 
   }
 
   authSuccessfuly() {
      this.authChange.next(true);
-     this.router.navigate(['/training']);
+     this.router.navigate(['/training'])
   }
 }
