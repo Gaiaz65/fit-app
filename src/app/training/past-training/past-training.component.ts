@@ -11,13 +11,13 @@ import { MatPaginator } from '@angular/material/paginator';
   styleUrls: ['./past-training.component.scss'],
 })
 export class PastTrainingComponent implements OnInit, AfterViewInit {
+  constructor(private trService: TrainingService) {}
   displayedColumns = ['date', 'name', 'duration', 'calories', 'state'];
   dataSource = new MatTableDataSource<Exercise>();
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginatior: MatPaginator;
 
-  constructor(private trService: TrainingService) {}
   ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginatior
