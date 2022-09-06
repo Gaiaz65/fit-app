@@ -8,7 +8,7 @@
       "@angular/*": ["./node_modules/@angular/*"]
     },
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "strict": false ,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -29,8 +29,8 @@
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true,
+    "strictInjectionParameters": false,
+    "strictInputAccessModifiers": false,
+    "strictTemplates": false,
   }
 }
