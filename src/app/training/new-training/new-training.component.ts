@@ -14,7 +14,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
   styleUrls: ['./new-training.component.scss'],
 })
 export class NewTrainingComponent implements OnInit, OnDestroy {
-  exercises: any;
+  exercises: any =[];
   trSub:Subscription;
 
   constructor(
@@ -23,7 +23,9 @@ export class NewTrainingComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.trSub = this.trService.exercisesChanged.subscribe(
-      exercises => (this.exercises = exercises)
+      exercises => {
+        this.exercises = ([...exercises]);
+      }
     )
     this.trService.fetchAvailableExercises()
     };
