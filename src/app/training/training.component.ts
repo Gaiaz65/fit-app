@@ -14,6 +14,7 @@ export class TrainingComponent implements OnInit {
   constructor(private trService: TrainingService) {}
 
   ngOnInit() {
+    this.exerciseSub =
     this.trService.exerciseChanged.subscribe(
       exersice => {
         if (exersice){
@@ -23,6 +24,12 @@ export class TrainingComponent implements OnInit {
         }
       }
     )
+  }
+
+  ngOnDestroy() {
+    if (this.exerciseSub){
+      this.exerciseSub.unsubscribe()
+    }
   }
 
 }

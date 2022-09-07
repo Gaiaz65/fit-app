@@ -1,3 +1,4 @@
+import { UIService } from './../shared/ui.service';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Injectable } from '@angular/core';
 import { Subject, Subscription } from 'rxjs';
@@ -14,7 +15,8 @@ export class TrainingService {
   private finishedExercises: Exercise[] = [];
   private fbSub = [];
 
-  constructor(private dataB: AngularFirestore) {}
+  constructor(private dataB: AngularFirestore,
+      private uiService: UIService) {}
 
   fetchAvailableExercises() {
     const AvailableSubs = this.dataB
@@ -26,7 +28,7 @@ export class TrainingService {
           this.exercisesChanged.next([...this.availableExercises]);
         },
         (error) => {
-          console.log(error);
+          this.uiService.showSnackbar('There is an issue. Please, try again later', null, 5000);
         }
       );
     this.fbSub.push(AvailableSubs);
@@ -76,7 +78,7 @@ export class TrainingService {
           this.finishedexercisesChanged.next(exercises);
         },
         (error) => {
-          console.log(error);
+          this.uiService.showSnackbar('There is an issue. Please, try again later', null, 5000);
         }
       );
     this.fbSub.push(complCanEx);

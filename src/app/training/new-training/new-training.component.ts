@@ -1,4 +1,4 @@
-import { Observable, Subscription } from 'rxjs';
+import {  Subscription } from 'rxjs';
 
 // import { AngularFirestore } from 'angularfire2/firestore';
 import { NgForm } from '@angular/forms';
@@ -16,6 +16,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 export class NewTrainingComponent implements OnInit, OnDestroy {
   exercises: any =[];
   trSub:Subscription;
+  isLoading = true;
 
   constructor(
     private trService: TrainingService,
@@ -25,13 +26,16 @@ export class NewTrainingComponent implements OnInit, OnDestroy {
     this.trSub = this.trService.exercisesChanged.subscribe(
       exercises => {
         this.exercises = ([...exercises]);
+        this.isLoading = false;
       }
     )
     this.trService.fetchAvailableExercises()
     };
 
   ngOnDestroy(): void {
+    if (this.trSub){
       this.trSub.unsubscribe()
+    }
   }
 
   onStartTraining(form: NgForm) {
