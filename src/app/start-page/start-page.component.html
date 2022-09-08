@@ -4,19 +4,40 @@ fxLayout="column"
 fxLayout.gt-md="row"
 fxLayoutGap.gt-md="20px"
 fxLayoutAlign="center center">
-  <button mat-raised-button color="primary" (click)="fetch()">Fetch</button>
-  <div>
-    <h1>TSart</h1>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, s?</p>
-  </div>
+<h1>Purpose</h1>
+<h4>
+  What's this app for? It is easy, all the time you try to memorize your set of exercises and the duration of one. Folow these easy step and you quickly get familiar with this app.
+</h4>
+<mat-stepper orientation="horizontal">
+  <mat-step color="accent">
+    <ng-template matStepLabel>Train</ng-template>
+    <ng-template matStepContent>
+      <p>Go to the training page</p>
+      <p>Set the necessary exercise/ or the one you like:)</p>
+      <p>Train hard or be a lazy bones, no one will ever know, all the information in securely stored</p>
+      <button mat-mini-fab  matStepperNext color="accent"><mat-icon>subdirectory_arrow_right_rounded</mat-icon></button>
+    </ng-template>
+  </mat-step>
+  <mat-step color="accent">
+    <ng-template matStepLabel>Track results</ng-template>
+    <p>Go to the training page, then statistics tab</p>
+    <p>Here you can see the list of all exercises you have ever done with this app</p>
+    <p>Sort the columns and get only necessary information, make your plans and be ready for new inventions!</p>
+    <button mat-mini-fab  matStepperPrevious color="accent"><mat-icon>subdirectory_arrow_left_rounded</mat-icon></button>
+  </mat-step>
+</mat-stepper>
 
   <div>
-    <h1>TSart</h1>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, s?</p>
+    <mat-icon color="accent">track_changes</mat-icon>
+    <p>Here you do your daily trainings, morning exercises without checking the order and time!</p>
   </div>
   <div>
-    <h1>TSart</h1>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, s?</p>
+    <mat-icon color="accent">people</mat-icon>
+    <p>You can also use this app with the team during the session in the GYM</p>
+  </div>
+  <div>
+    <mat-icon color="accent">sports_martial_arts_rounded</mat-icon>
+    <p>Here you can save your statistics and show what you got!</p>
   </div>
 </div>
 
